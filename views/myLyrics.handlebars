@@ -1,0 +1,31 @@
+{{#each lyrics}}
+
+<div class="card card-body mb-2">
+
+    <div class='font-italic  text-secondary'>Song Title:</div>
+    <h4> {{title}}</h4>
+    <div class='font-italic  text-secondary'>Lyrics:</div>
+    <p class='lead' style='white-space: pre'>{{lyrics}}</p>
+
+
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            <a class="btn btn-info btn-block " href="/lyrics/edit/{{id}}">Edit</a>
+        </div>
+
+        <div class="col-md-6 ">
+            <form action="/lyrics/{{id}}?_method=DELETE" method="post">
+                <input type='hidden' name='_method' value='DELETE' />
+                <input class='btn btn-danger btn-block' type='submit' value='Delete'></input>
+            </form>
+        </div>
+    </div>
+
+    <div class='font-italic'>Added by: {{userName}} | Date:
+        {{formatDate date day="numeric" month="long" year="numeric"}}
+    </div>
+</div>
+
+{{else}}
+<div class='alert alert-warning'>No lyrics found!</div>
+{{/each}}

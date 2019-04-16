@@ -1,0 +1,31 @@
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+
+<div class="card card-body">
+
+    <h3 class=''>Add Lyric Idea</h3>
+
+    <form action="/lyrics" method="post">
+
+
+        <div class="form-group">
+            <label for="title">Song Title</label>
+            <input type="text" class="form-control" name='title' value='{{title}}'>
+        </div>
+
+        <div class="form-group">
+            <label for="lyrics">Lyrics</label>
+            <textarea type="text" class="form-control" name='lyrics'>{{lyrics}}</textarea>
+        </div>
+
+        <button type='submit' class='btn btn-info'>
+            Submit
+        </button>
+
+    </form>
+
+</div>

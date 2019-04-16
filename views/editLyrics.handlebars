@@ -1,0 +1,19 @@
+<div class="card card-body">
+
+    <h3 class=''>Edit Lyric Idea</h3>
+
+    <form action="/lyrics/{{lyrics.id}}?_method=PUT" method="post">
+        <input type='hidden' name='_method' value='PUT' />
+        <div class="form-group">
+            <label for="title">Song Title</label>
+            <input type="text" class="form-control" name='title' value='{{lyrics.title}}'>
+        </div>
+        <div class="form-group">
+            <label for="lyrics">Lyrics</label>
+            <textarea type="text" class="form-control" name='lyrics'>{{lyrics.lyrics}}</textarea>
+        </div>
+        <button type='submit' class='btn btn-info'>
+            Submit
+        </button>
+    </form>
+</div>

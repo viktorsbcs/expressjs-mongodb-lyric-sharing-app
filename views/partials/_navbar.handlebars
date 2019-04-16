@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+
+
+    {{#if user}}
+    <a class="navbar-brand" href="/lyrics">Lyric Ideas App</a>
+
+    {{else}}
+
+    <a class="navbar-brand" href="/">Lyric Ideas App</a>
+    {{/if}}
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            {{#if user}}
+            {{!-- <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li> --}}
+
+            <li class="nav-item"><a href="/lyrics" class="nav-link">Collection</a></li>
+            <li class="nav-item"><a href="/lyrics/my" class="nav-link">My Lyrics</a></li>
+            <li class="nav-item"><a href="/lyrics/add" class="nav-link">Add New</a></li>
+
+
+            {{/if}}
+
+
+        </ul>
+
+
+
+        <ul class="navbar-nav ml-auto">
+
+            {{#if user}}
+
+            <li class="nav-item">
+                <span class='nav-link'>Welcome, {{user.name}}!</span>
+            </li>
+
+
+            {{!-- 
+            <li class="nav-item dropdown">
+
+
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink">Menu</a>
+
+                <div class="dropdown-menu">
+
+                    <a href="/lyrics" class="dropdown-item">Lyrics</a>
+                    <a href="/lyrics/add" class="dropdown-item">Add Lyrics</a>
+                </div>
+
+
+                </a>
+            </li> --}}
+
+            <li class="nav-item">
+                <span class='nav-link'> | </span>
+            </li>
+
+            <li class="nav-item">
+                <a class='nav-link' href="/users/logout">Logout</a>
+            </li>
+
+            {{else}}
+
+            <li class="nav-item">
+                <a class="nav-link" href="/users/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/register">Register</a>
+            </li>
+
+            {{/if}}
+
+
+        </ul>
+    </div>
+</nav>
